@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>超越博客首页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/icon-font/iconfont.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.logo{
+			vertical-align: middle;
+		}
+		.logo span{
+			font-size: 35px;
+			color: blue;
+		}
+		.logo a{
+			text-decoration: none;
+			font-size: 23px;
+			color: white;
+		}
+		.top{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 50px;
+			background-color: #000;
+			z-index: 999;
+		}
+		.txt{
+			height: 100%;
+			color: white;
+		}
+		.txt li{
+			vertical-align: middle;
+		}
+		.txt li:last-child input{
+			color: #000;
+		}
+		.txt button{
+			background-color: #000;
+			border: none;
+		}
+		.txt span{
+			line-height: 50px;
+		}
+		.txt span a{
+			color: white;
+		}
+
+
+		.navbar{
+			margin-top: 50px;
+		}
+		.bgtop{
+			margin-top: -20px;
+		}
+		table{
+			width: 100%;
+			margin-top: 10px;
+		}
+		table tr{
+			height: 160px;
+		}
+		.col-md-9{
+			padding: 0 50px;
+			box-sizing: border-box;
+		}
+		h3{
+			margin: 10px 0px;
+		}
+		.liname{
+			margin-top: 30px;
+		}
+		.iconfont{
+			font-size: 14px;
+		}
+		.final{
+			background-color: rgba(0,0,0,.5);
+			margin-top: 30px;
+			width: 100%;
+			height: 80px;
+		}
+		.footul{
+			margin: 0;
+		}
+		.context{
+			height: 80px;
+			color: #000;
+		}
+		.context ul{
+			height: 80px;
+			line-height: 80px;
+		}
+		.context a{
+			color: #000;
+		}
+		.name{
+			display: inline-block;
+			text-indent: 2em;
+		}
+
+		/*模态框*/
+		.time{
+			display: inline-block;
+			height: 26px;
+			width: 28%;
+			line-height: 26px;
+			border: 1px solid #000;
+			float: right;
+		}
+		.title{
+			width: 65%;
+		}
+		.modal-content{
+			padding-left: 25px;
+			padding-right: 25px;
+			box-sizing: border-box;
+		}
+		.art{
+			width: 100%;
+			height: 450px;
+		}
+		/*-----------------*/
+
+		.page{
+			height: 60px;
+		}
+		.page li{
+			margin-top: 20px;
+			width: 30px;
+			height: 30px;
+			border: 1px solid gray;
+			margin-left: 5px;
+			line-height: 30px;
+		}
+		.page li:nth-child(7){
+			border: none;
+		}
+	</style>
+</head>
+<body>
+<%- include('header') %>
+<div class="bgtop">
+	<img src="images/phone.jpg" style="width: 100%;height: 244px;">
+</div>
+
+<div class="container">
+	<table class="table-responsive table-bordered">
+		<% for(var i=0;i<us.length;i++){ %>
+		<tr>
+			<td class="col-md-3 text-center">
+				<a href="/myblog/<%=us[i].user._id%>">
+					<img src="/images/<%=us[i].user.avatar%>" class="img-circle" style="width: 80px;height: 80px;">
+					<p><%= us[i].user.username%></p>
+				</a>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="/article/info/<%=us[i]._id%>"><%= us[i].title%></a></h3>
+				<small><%= us[i].context%></small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li><span>&nbsp;<%=us[i].ctime%></span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span><%=us[i].count%></span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</div>
+
+
+<div class="container text-center">
+	<ul class="page list-inline">
+		<li>
+		  <a href="#">
+		    <span>&laquo;</span>
+		  </a>
+		</li>
+
+		<% for(var i=0; i<count/10; i++){ %>
+	   		<li><a href="?page=<%= i+1 %>"><%= i+1 %></a></li>
+	   	<% } %>
+
+		<li>
+		  <a href="#">
+		    <span>&raquo;</span>
+		  </a>
+		</li>
+	</ul>
+</div>
+
+<div class="final footer">
+	<div class="container text-center context">
+		<ul class="list-inline footul">
+			<li>
+				<span>
+					链接：<a href="">首页</a>|<a href="">排行</a>|<a href="">我的博客</a>|<a href="">我的游戏</a>		
+				</span>
+			</li>
+			<li>
+				<span>版权所有&nbsp;海南椰子蓬勃发展有限公司Copyright Reserved 2015-2017 苏ICP备14085412</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var time = new Date();
+
+</script>
+</body>
+</html>

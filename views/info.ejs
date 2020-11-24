@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>超越博客首页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/bootstrap-3.3.7/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/icon-font/iconfont.css">
+	<script type="text/javascript" src="/jquery.js"></script>
+	<script type="text/javascript" src="/bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			background-color: #ebece6;
+		}
+		.logo{
+			vertical-align: middle;
+		}
+		.logo span{
+			font-size: 35px;
+			color: blue;
+		}
+		.logo a{
+			text-decoration: none;
+			font-size: 23px;
+			color: white;
+		}
+		.top{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 50px;
+			background-color: #000;
+			z-index: 999;
+		}
+		.txt{
+			height: 100%;
+			color: white;
+		}
+		.txt li{
+			vertical-align: middle;
+		}
+		.txt li:last-child input{
+			color: #000;
+		}
+		.txt button{
+			background-color: #000;
+			border: none;
+		}
+		.txt span{
+			line-height: 50px;
+		}
+		.txt span a{
+			color: white;
+		}
+		.navbar{
+			margin-top: 50px;
+		}
+		.final{
+			background-color: rgba(0,0,0,.5);
+			margin-top: 30px;
+			width: 100%;
+			height: 80px;
+		}
+		.footul{
+			margin: 0;
+		}
+		.context{
+			height: 80px;
+			color: #000;
+		}
+		.context ul{
+			height: 80px;
+			line-height: 80px;
+		}
+		.context a{
+			color: #000;
+		}
+		.name{
+			display: inline-block;
+			text-indent: 2em;
+		}
+
+		/*侧边栏注释*/
+		.atitle{
+			height: 50px;
+			font-size: 20px;
+			line-height: 50px;
+		}
+		.aside table{
+			background-color: white;
+			border: 2px solid white;
+			border-collapse:collapse;
+		}
+		.aside table tr:first-child{
+			background-color: #ebece6;
+		}
+		.aside table tr:nth-child(2) td{
+			height: 230px;
+			padding-top: 50px;
+			box-sizing: border-box;
+		}
+		.aside table tr:nth-child(2) td p{
+			margin-top: 10px;
+		}
+		.aside table tr:last-child td{
+			height: 130px;
+			padding-top: 30px;
+			box-sizing: border-box;
+			line-height: 24px;
+		}
+		.aside table tr:last-child td p{
+			font-size: 20px;
+			color: blue;
+		}
+		.aside table tr:last-child td span{
+			font-size: 14px;
+			margin-left: 10px;
+			color: #000;
+		}
+
+		/*正文注释*/
+		.section{
+			border: 2px solid white;
+			background-color: white;
+		}
+		.section table{
+			background-color: #ebece6;
+		}
+		
+		.ititle{
+			font-size: 24px;
+			color: blue;
+		}
+		.ititle span{
+			color: #000;
+			margin-left: 10px;
+		}
+		.liname{
+			margin-top: 30px;
+		}
+		.liname li{
+			margin-left: 40px;
+		}
+		.talk{
+			color: blue;
+		}
+		.talk a{
+			margin-left: 10px;
+		}
+		.talk span{
+			color: #000;
+		}
+		.read span{
+			margin-left: 10px;
+			color: #000;
+		}
+		.contro img{
+			width: 300px;
+			height: 320px;
+		}
+		.conimg{
+			margin: 30px 0;
+		}
+
+		/*评论区*/
+		.talkcon{
+			background-color: white;
+		}
+		.talktop{
+			display: block;
+			margin: 0 auto;
+			width: 100px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+		}
+		.talkcon button{
+			width: 130px;
+			height: 40px;
+			display: block;
+			margin: 0 auto;
+			margin-top: 10px;
+			color: white;
+		}
+		textarea{
+			margin: 0 auto;
+			display: block;
+			border: 2px solid #ebece6;
+		}
+		.talktab tr:first-child td{
+			border-top: none !important;
+		}
+		.talktab tr{
+			background-color: white;
+		}
+		.talktab tr td:first-child{
+			height: 100px;
+			width: 100px;
+			border: none;
+		}
+		.talkname{
+			font-size: 22px;
+		}
+		.tablktim{
+			line-height: 30px;
+		}
+
+		/*分页*/
+		.page{
+			height: 60px;
+		}
+		.page li{
+			margin-top: 20px;
+			width: 30px;
+			height: 30px;
+			border: 1px solid gray;
+			margin-left: 5px;
+			line-height: 30px;
+		}
+		.page li:nth-child(7){
+			border: none;
+		}
+
+		/*模态框*/
+		.time{
+			display: inline-block;
+			height: 26px;
+			width: 28%;
+			line-height: 26px;
+			border: 1px solid #000;
+			float: right;
+		}
+		.title{
+			width: 65%;
+		}
+		.modal-content{
+			padding-left: 25px;
+			padding-right: 25px;
+			box-sizing: border-box;
+		}
+		.art{
+			width: 100%;
+			height: 450px;
+		}
+		/*-----------------*/
+	</style>
+</head>
+<body>
+
+<%- include('header') %>
+<div class="container">
+	<div class="aside col-md-3 text-center">
+		<table class="table">
+			<tr>
+				<td>
+					<div class="atitle">个人资料</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<img src="/images/<%=info.user.avatar%>" class="img-circle" style="width: 80px;height: 80px;">
+					<p><%=info.user.username%></p>
+					<span>我是要成为海贼王的男人！</span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="iconfont">&#xe640;<span>87246</span></p>
+					<p class="iconfont">&#xe62f;<span>213</span></p>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="section col-md-9">
+		<table class="table">
+			<tr>
+				<td>
+					<h3 class="iconfont ititle">&#xe62f;<span><%=info.title%></span></h3>
+					<div class="pull-right clearfix">
+						<ul class="list-inline liname">
+							<li><span><%=info.ctime%></span></li>
+							<li class="iconfont talk">&#xe651;<a href="">评论</a><span>(<%=talk.length%>)</span></li>
+							<li class="iconfont read">&#xe640;<span><%=info.count%></span></li>
+						</ul>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<small><%=info.context%></small>
+					<div class="contro">
+						<div class="text-center conimg">
+							<img src="/images/photo.jpg">
+						</div>
+					</div>
+				</td>
+			</tr>
+		</table>
+		<div class="talkcon">
+			<span class="iconfont talktop">&#xec7f;&#xec7f;评论&#xec7f;&#xec7f;</span>
+			<% if(user){ %>
+			<form method="post" action="/article/savetalk">
+				<input type="hidden" name="uid" value="<%=user._id%>">
+				<input type="hidden" name="aid" value="<%=info._id%>">
+				<textarea style="width: 90%;height: 250px;" name="context"></textarea>
+				<button type="submit" class="text-center btn btn-info">发评论</button>
+			</form>
+			<% } %>
+			<table class="table talktab">
+				<% for(var i=0;i<talk.length;i++) { %>
+					<tr>
+						<td><img src="/images/<%=talk[i].user.avatar%>" class="img-circle" style="width: 80px;height: 80px;"></td>
+						<td class="">
+							<span class="talkname"><%=talk[i].user.username%></span>
+							<span class="tablktim" style="float: right;"></span>
+							<h5><%=talk[i].talkcontext%></h5>
+						</td>
+					</tr>
+				<% } %>
+			</table>
+			<div class="text-center">
+				<ul class="page list-inline">
+					<li>
+					  <a href="#">
+					    <span>&laquo;</span>
+					  </a>
+					</li>
+					<% for(var i=0; i<=count/5; i++){ %>
+					<li><a href="?page=<%= i+1 %>"><%= i+1 %></a></li>
+					<% } %>
+					<li>
+					  <a href="#">
+					    <span>&raquo;</span>
+					  </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+
+<div class="final footer">
+	<div class="container text-center context">
+		<ul class="list-inline footul">
+			<li>
+				<span>
+					链接：<a href="">首页</a>|<a href="">排行</a>|<a href="">我的博客</a>|<a href="">我的游戏</a>		
+				</span>
+			</li>
+			<li>
+				<span>版权所有&nbsp;海南椰子蓬勃发展有限公司Copyright Reserved 2015-2017 苏ICP备14085412</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+
+<script type="text/javascript">
+	var time = new Date();
+</script>
+</body>
+</html>

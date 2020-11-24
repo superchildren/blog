@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>超越博客排行</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./icon-font/iconfont.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.logo{
+			vertical-align: middle;
+		}
+		.logo span{
+			font-size: 35px;
+			color: blue;
+		}
+		.logo a{
+			text-decoration: none;
+			font-size: 23px;
+			color: white;
+		}
+		.top{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 50px;
+			background-color: #000;
+			z-index: 999;
+		}
+		.txt{
+			height: 100%;
+			color: white;
+		}
+		.txt li{
+			vertical-align: middle;
+		}
+		.txt li:last-child input{
+			color: #000;
+		}
+		.txt button{
+			background-color: #000;
+			border: none;
+		}
+		.txt span{
+			line-height: 50px;
+		}
+		.txt span a{
+			color: white;
+		}
+		.navbar{
+			margin-top: 50px;
+		}
+		.bgtop{
+			margin-top: -20px;
+		}
+		table{
+			width: 100%;
+		}
+		table tr{
+			height: 160px;
+		}
+		.but1,.but2{
+			height: 80px;
+			border: none;
+			cursor: pointer;
+		}
+		.but2{
+			border-bottom: 3px solid blue;
+			color: blue;
+		}
+
+		.iconfont{
+			font-size: 16px;
+		}
+		table tr td:first-child{
+			position: relative;
+		}
+		table tr:first-child td:first-child::after{
+			content: "NO.1";
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 130px;
+			height: 50px;
+			text-align: center;
+			color: white;
+			line-height: 50px;
+			border-radius: 0 30px 30px 0;
+			background-image: linear-gradient(to right, #d3b36a , #edd190);
+		}
+		table tr:nth-child(2) td:first-child::after{
+			content: "NO.2";
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 130px;
+			height: 50px;
+			color: white;	
+			text-align: center;
+			line-height: 50px;
+			border-radius: 0 30px 30px 0;
+			background-image: linear-gradient(to right, #c9c9c9 , #dbdad8);
+		}
+		table tr:nth-child(3) td:first-child::after{
+			content: "NO.3";
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 130px;
+			height: 50px;
+			color: white;
+			text-align: center;
+			line-height: 50px;
+			border-radius: 0 30px 30px 0;
+			background-image: linear-gradient(to right, #d39e6a , #efbf8e);
+		}
+		table tr td:first-child::after{
+			content: "4";
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 130px;
+			height: 160px;
+			line-height: 160px;
+			color: gray;
+			text-align: center;
+			border-radius: 0 30px 30px 0;
+		}
+		.final{
+			background-color: rgba(0,0,0,.5);
+			margin-top: 30px;
+			width: 100%;
+			height: 80px;
+		}
+		.footul{
+			margin: 0;
+		}
+		.context{
+			height: 80px;
+			color: #000;
+		}
+		.context ul{
+			height: 80px;
+			line-height: 80px;
+		}
+		.context a{
+			color: #000;
+		}
+		.name{
+			display: inline-block;
+			text-indent: 2em;
+		}
+
+		/*模态框*/
+		.time{
+			display: inline-block;
+			height: 26px;
+			width: 28%;
+			line-height: 26px;
+			border: 1px solid #000;
+			float: right;
+		}
+		.title{
+			width: 65%;
+		}
+		.modal-content{
+			padding-left: 25px;
+			padding-right: 25px;
+			box-sizing: border-box;
+		}
+		.art{
+			width: 100%;
+			height: 450px;
+		}
+		/*-----------------*/
+	</style>
+</head>
+<body>
+<%- include('header') %>
+<div class="container">
+	<div class="col-md-6 text-center but1">
+		<h3>博文排行</h3>
+	</div>
+	<div class="col-md-6 text-center but2">
+		<h3>博客排行</h3>
+	</div>
+</div>
+		
+
+<div class="container">
+	<table class="table-responsive table-bordered">
+		<tr>
+			<td class="col-md-5 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<span class="name">Amumu</span>
+			</td>
+			<td class="col-md-3 text-center">
+				<span class="iconfont">&#xe62f;&nbsp;</span><span>25</span>
+			</td>
+			<td class="col-md-4 text-center">
+				<span class="iconfont">&#xe640;&nbsp;</span><span>229834</span>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+
+<div class="final footer">
+	<div class="container text-center context">
+		<ul class="list-inline footul">
+			<li>
+				<span>
+					链接：<a href="">首页</a>|<a href="">排行</a>|<a href="">我的博客</a>|<a href="">我的游戏</a>		
+				</span>
+			</li>
+			<li>
+				<span>版权所有&nbsp;海南椰子蓬勃发展有限公司Copyright Reserved 2015-2017 苏ICP备14085412</span>
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>

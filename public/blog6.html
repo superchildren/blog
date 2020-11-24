@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>超越博客排行</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./icon-font/iconfont.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		/*.in {
+		    display: block;
+		    padding-right: 0px!important;
+		}*/
+
+		.logo{
+			vertical-align: middle;
+		}
+		.logo span{
+			font-size: 35px;
+			color: blue;
+		}
+		.logo a{
+			text-decoration: none;
+			font-size: 23px;
+			color: white;
+		}
+		.top{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 50px;
+			background-color: #000;
+			z-index: 999;
+		}
+		.txt{
+			height: 100%;
+			color: white;
+		}
+		.txt li{
+			vertical-align: middle;
+		}
+		.txt li:last-child input{
+			color: #000;
+		}
+		.txt button{
+			background-color: #000;
+			border: none;
+		}
+		.txt span{
+			line-height: 50px;
+		}
+		.txt span a{
+			color: white;
+		}
+		
+		.navbar{
+			margin-top: 50px;
+		}
+		.bgtop{
+			margin-top: -20px;
+		}
+		table{
+			width: 100%;
+		}
+		table tr{
+			height: 160px;
+		}
+		.col-md-9{
+			padding: 0 50px;
+			box-sizing: border-box;
+		}
+		.liname{
+			margin-top: 30px;
+		}
+
+		.iconfont{
+			font-size: 16px;
+		}
+		.final{
+			background-color: rgba(0,0,0,.5);
+			margin-top: 30px;
+			width: 100%;
+			height: 80px;
+		}
+		.footul{
+			margin: 0;
+		}
+		.context{
+			height: 80px;
+			color: #000;
+		}
+		.context ul{
+			height: 80px;
+			line-height: 80px;
+		}
+		.context a{
+			color: #000;
+		}
+		.mytop{
+			height: 300px;
+			position: relative;
+			margin-top: -20px;
+			margin-bottom: 10px;
+		}
+		.con{
+			color: white;
+			position: absolute;
+			width: 100px;
+			height: 150px;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			margin: auto;
+		}
+		.pname{
+			margin: 0;
+		}
+		.mytopimg{
+			position: relative;
+		}
+		.mytopimg img{
+			border: 2px solid white;
+		}
+		.topimg{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			font-size: 20px;
+			width: 20px;
+			height: 20px;
+			color: white;
+		}
+		.page{
+			height: 60px;
+		}
+		.page li{
+			margin-top: 20px;
+			width: 30px;
+			height: 30px;
+			border: 1px solid gray;
+			margin-left: 5px;
+			line-height: 30px;
+		}
+		.page li:nth-child(7){
+			border: none;
+		}
+		.time{
+			display: inline-block;
+			height: 26px;
+			width: 28%;
+			line-height: 26px;
+			border: 1px solid #000;
+			float: right;
+		}
+		.title{
+			width: 65%;
+		}
+		.modal-content{
+			padding-left: 25px;
+			padding-right: 25px;
+			box-sizing: border-box;
+		}
+		.art{
+			width: 100%;
+			height: 450px;
+		}
+		.btnfoot{
+			margin: 20px 0 20px 0;
+		}
+	</style>
+
+</head>
+<body>
+<div class="top">
+	<div class="container">
+		<div class="logo pull-left">
+			<span class="iconfont iconsailing">
+			</span>
+			<a href="">超越博客</a>
+		</div>
+		<div class="txt pull-right">
+			<ul class="list-inline">
+				<li>
+					<img src="images/header.jpg" class="img-circle" style="width: 25px;height: 25px;">
+					<span>Amumu</span>
+				</li>
+				<li>
+					<button type="button" class="iconfont" data-toggle="modal" data-target="#myModal">&#xe771;</button>
+				</li>
+				<li>
+					<input type="search" style="float: left;">
+					<a href="#" style="float: left;margin-left: -20px;line-height: 26px;text-decoration: none;" class="iconfont">&#xe616;</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+				<h3 class="modal-title" id="mytitle">发博文</h3>
+			</div>
+			<div class="modal-body">
+				<b>标题:</b><input type="text" name="" class="title">
+				<div class="time text-center" id="tim"></div>
+			</div>
+			<div class="modal-footer">
+				<textarea class="art"></textarea>
+				<div class="text-center btnfoot">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">发布</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tab">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="tab">
+	    <ul class="nav navbar-nav">
+			<li><a href="">首页</a></li>
+			<li class="active"><a href="">排行</a></li>
+			<li><a href="">我的博客</a></li>
+			<li><a href="">我的游戏</a></li>
+		</ul>
+    </div>
+  </div>
+</nav>
+	
+
+<div class="container mytop text-center">
+	<img src="images/mytop.jpg" style="width: 100%;height: 100%;">
+	<div class="con">
+		<div class="mytopimg">
+			<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+			<a href=""><span class="iconfont topimg">&#xe699;</span></a>
+		</div>
+		
+		<p class="pname" style="font-size: 24px;">Amumu</p>
+		<span class="iconfont iconnanxing">&nbsp;&nbsp;39岁</span>
+	</div>
+</div>	
+
+<div class="container">
+	<table class="table-responsive table-bordered">
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li><span class="timd"></span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+						<li><a href="" class="iconfont">&#xe627;</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li><span class="timd"></span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+						<li><a href="" class="iconfont">&#xe627;</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li><span class="timd"></span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+						<li><a href="" class="iconfont">&#xe627;</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li><span class="timd"></span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+						<li><a href="" class="iconfont">&#xe627;</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li><span class="timd"></span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+						<li><a href="" class="iconfont">&#xe627;</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li><span class="timd"></span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+						<li><a href="" class="iconfont">&#xe627;</a></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="container text-center">
+	<ul class="page list-inline">
+		<li>
+		  <a href="#">
+		    <span>&laquo;</span>
+		  </a>
+		</li>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+		<li>...</li>
+		<li><a href="#">7</a></li>
+		<li>
+		  <a href="#">
+		    <span>&raquo;</span>
+		  </a>
+		</li>
+	</ul>
+</div>
+
+<div class="final footer">
+	<div class="container text-center context">
+		<ul class="list-inline footul">
+			<li>
+				<span>
+					链接：<a href="">首页</a>|<a href="">排行</a>|<a href="">我的博客</a>|<a href="">我的游戏</a>		
+				</span>
+			</li>
+			<li>
+				<span>版权所有&nbsp;海南椰子蓬勃发展有限公司Copyright Reserved 2015-2017 苏ICP备14085412</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+	var time = new Date();
+	function timeFormat(dd){
+		var YYYY = dd.getFullYear()
+		var MM = dd.getMonth()+1>10 ? dd.getMonth()+1 : '0'+(dd.getMonth()+1);
+		var DD = dd.getDate()>10 ? dd.getDate() : '0'+(dd.dd.getDate()+1);
+		var hh = dd.getHours()>10 ? dd.getHours() : dd.getHours();
+		var mm = dd.getMinutes()>10 ? dd.getMinutes() : '0'+dd.getMinutes();
+		var ss = dd.getSeconds()>10 ? dd.getSeconds() : '0'+dd.getSeconds();
+		return YYYY+'-'+MM+'-'+DD+' '+hh+':'+mm+':'+ss;
+	}
+	var eletime = document.getElementById("tim");
+	eletime.innerHTML = timeFormat(time);
+
+
+	function onlom(dd){
+		var MM = dd.getMonth()+1;
+		var DD = dd.getDate()>10 ? dd.getDate() : '0'+(dd.dd.getDate()+1);
+		return MM+'月'+DD+'日';
+	}
+	var elettime = document.getElementsByClassName("timd");
+	for(var i=0;i<elettime.length;i++){
+		elettime[i].innerHTML = onlom(time);
+	}
+	
+</script>
+</body>
+</html>

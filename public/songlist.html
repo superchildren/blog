@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>歌单</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+	<link rel="stylesheet" type="text/css" href="./icon-font/iconfont.css">
+	<style type="text/css">
+		.left{
+			float: left;
+		}
+		.right{
+			float: right;
+		}
+		.header{
+			text-align: center;
+			height: 50px;
+			line-height: 50px;
+			font-size: 20px;
+		}
+		.header .iconfont{
+			font-size: 40px;
+		}
+		.con{
+			width: 100%;
+			height: 150px;
+		}
+		.con img{
+			position: relative;
+		}
+		.con img:after{
+			content: '&#xe769;sdgdsgad';
+			width: 40px;
+			height: 20px;
+			display: block;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+		.person{
+			margin-left: 10px;
+		}
+		.menu{
+			width: 100%;
+			height: 60px;
+			display: flex;
+		}
+		.menucon{
+			display: inline-flex;
+			flex:1;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+		}
+		.menucon a{
+			text-decoration: none;
+		}
+		.menucon a span{
+			font-size: 14px;
+		}
+		.menucon a p{
+			font-size: 25px;
+			margin: 0;
+		}
+		ul{
+			padding-left: 0;
+		}
+		ul li{
+			list-style: none;
+		}
+		.list{
+			width: 100%;
+			background-color: white;
+		}
+		.list ul li{
+			text-indent: 2em;
+			height: 40px;
+			margin: 10px 0;
+			position: relative;
+		}
+		.sor{
+			position: absolute;
+			display: inline-block;
+			width: 20px;
+			height: 40px;
+			line-height: 40px;
+			top: 0;
+			left: -20px;
+		}
+		.list ul li:first-child{
+			line-height: 40px;
+		}
+		.list ul li:first-child::before{
+			display: block;
+			position: absolute;
+			width: 10px;
+			height: 10px;
+			content: '>';
+			top: 0;
+			left:-20px;
+		}
+		
+		.list ul li p{
+			margin: 0;
+			width: 70%;
+		}
+		.list ul li span{
+			display: block;
+			width: 70%;
+		}
+		.mov{
+			margin-top: -30px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="left iconfont iconV1"></div>
+		<span>歌单</span>
+		<div class="right iconfont iconpaixingbang"></div>
+		<div class="right iconfont iconfenxiangliebiao" style="margin-right: 15px;"></div>
+	</div>
+	<div class="con">
+		<div class="left">
+			<img src="./images/photo.jpg" style="height: 150px;height: 150px;">
+		</div>
+		<div class="left person">
+			<p>我喜欢的音乐</p>
+			<img src="images/header.jpg" style="width: 25px;height: 25px;">
+			<span>aze</span>
+		</div>
+		<div class="menu">
+			<div class="menucon">
+				<a href="">
+					<p class="iconfont">&#xe608;</p>
+					<span>评论</span>
+				</a>
+			</div>
+			<div class="menucon">
+				<a href="">
+					<p class="iconfont">&#xe60a;</p>
+					<span>分享</span>
+				</a>
+			</div>
+			<div class="menucon">
+				<a href="">
+					<p class="iconfont">&#xe609;</p>
+					<span>下载</span>
+				</a>
+			</div>
+			<div class="menucon">
+				<a href="">
+					<p class="iconfont">&#xe6d3;</p>
+					<span>多选</span>
+				</a>
+			</div>
+		</div>
+		<div class="list">
+			<ul>
+				<li>播放全部</li>
+				<li>
+					<span class="sor">1</span>
+					<p>天各一方</p>
+					<span>曾轶可</span>
+					<div class="right mov">
+						<a class="iconfont">&#xe619;</a>
+						<a class="iconfont">&#xe601;</a>
+					</div>
+				</li>
+				<li>
+					<p>魔鬼中的天使</p>
+					<span>曾轶可</span>
+					<div class="right mov">
+						<a class="iconfont">&#xe619;</a>
+						<a class="iconfont">&#xe601;</a>
+					</div>
+				</li>
+				<li>
+					<p>爱的故事</p>
+					<span>曾轶可</span>
+					<div class="right mov">
+						<a class="iconfont">&#xe619;</a>
+						<a class="iconfont">&#xe601;</a>
+					</div>
+				</li>
+				<li>
+					<p>情书</p>
+					<span>曾轶可</span>
+					<div class="right mov">
+						<a class="iconfont">&#xe619;</a>
+						<a class="iconfont">&#xe601;</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

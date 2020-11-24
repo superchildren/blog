@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>博客首页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./icon-font/iconfont.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body{
+			background: url("images/bg2.jpg") no-repeat;
+			background-size: 100% auto;
+		}
+		.con{
+			width: 400px;
+			height: 450px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			margin: auto;
+			background-color: rgba(33,142,163,.5);
+			border-radius: 10px;
+		}
+		.cont{
+			padding: 40px;
+			box-sizing: border-box;
+		}
+		.logo{
+			color: white;
+			width: 100%;
+			height: 100%;
+			margin: 20px 0;
+		}
+		.logo span{
+			font-size: 65px;
+		}
+		.logo h1{
+			display: inline-block;
+		}
+		@font-face {
+			font-family: 'iconfont';
+			src: url('iconfont.eot');
+			src: url('iconfont.eot?#iefix') format('embedded-opentype'),
+		        url('iconfont.woff2') format('woff2'),
+		        url('iconfont.woff') format('woff'),
+		        url('iconfont.ttf') format('truetype'),
+		        url('iconfont.svg#iconfont') format('svg');
+		}
+		.iconfont {
+		    font-family: "iconfont" !important;
+		    font-size: 16px;
+		    font-style: normal;
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		}
+
+		button{
+			margin-top: 15px;
+			width: 100%;
+			height: 40px;
+		}
+		#back{
+			background-color: #218ea3;
+			border: 1px solid #2ab2cc;
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="con">
+		<div class="cont">
+			<div class="logo text-center">
+				<span class="iconfont iconsailing">
+				</span>
+				<h1>超越博客</h1>
+			</div>
+			<form action="/master" method="post"> 
+				<input type="user" name="username" class="form-control iconfont" id="user" placeholder="&#xe66d;请输入账号">
+				<input type="pwd" name="userpwd" class="form-control iconfont" id="pwd" placeholder="&#xe755;请输入密码">
+				<button class="btn btn-info" type="submit">登录</button>
+				<button class="btn btn-default" type="text" id="back">返回</button>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

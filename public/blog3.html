@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>超越博客首页</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./icon-font/iconfont.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.logo{
+			vertical-align: middle;
+		}
+		.logo span{
+			font-size: 35px;
+			color: blue;
+		}
+		.logo a{
+			text-decoration: none;
+			font-size: 23px;
+			color: white;
+		}
+		.top{
+			position: fixed;
+			top: 0;
+			width: 100%;
+			height: 50px;
+			background-color: #000;
+			z-index: 999;
+		}
+		.txt{
+			height: 100%;
+			color: white;
+		}
+		.txt span{
+			line-height: 50px;
+		}
+		.txt span a{
+			color: white;
+		}
+		.txt li{
+			vertical-align: middle;
+		}
+		.txt li:last-child input{
+			color: #000;
+		}
+
+
+		.navbar{
+			margin-top: 50px;
+		}
+		.bgtop{
+			margin-top: -20px;
+		}
+		table{
+			width: 100%;
+			margin-top: 10px;
+		}
+		table tr{
+			height: 160px;
+		}
+		.col-md-9{
+			padding: 0 50px;
+			box-sizing: border-box;
+		}
+		h3{
+			margin: 10px 0px;
+		}
+		.liname{
+			margin-top: 30px;
+		}
+		.iconfont{
+			font-size: 14px;
+		}
+		.final{
+			background-color: rgba(0,0,0,.5);
+			margin-top: 30px;
+			width: 100%;
+			height: 80px;
+		}
+		.footul{
+			margin: 0;
+		}
+		.context{
+			height: 80px;
+			color: #000;
+		}
+		.context ul{
+			height: 80px;
+			line-height: 80px;
+		}
+		.context a{
+			color: #000;
+		}
+		.name{
+			display: inline-block;
+			text-indent: 2em;
+		}
+	</style>
+</head>
+<body>
+<div class="top">
+	<div class="container">
+		<div class="logo pull-left">
+			<span class="iconfont iconsailing">
+			</span>
+			<a href="">超越博客</a>
+		</div>
+		<div class="txt pull-right">
+			<ul class="list-inline">
+				<li>
+					<span>
+						<a href="">登录</a>|<a href="">注册</a>
+					</span>
+				</li>
+				<li>
+					<input type="search" style="float: left;">
+					<a href="#" style="float: left;margin-left: -20px;line-height: 26px;text-decoration: none;" class="iconfont">&#xe616;</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tab">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="tab">
+	    <ul class="nav navbar-nav">
+			<li class="active"><a href="">首页</a></li>
+			<li><a href="">排行</a></li>
+			<li><a href="">我的博客</a></li>
+			<li><a href="">我的游戏</a></li>
+		</ul>
+    </div>
+  </div>
+</nav>
+<div class="bgtop">
+	<img src="images/phone.jpg" style="width: 100%;height: 244px;">
+</div>
+
+<div class="container">
+	<table class="table-responsive table-bordered">
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td class="col-md-3 text-center">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<p>Amumu</p>
+			</td>
+			<td class="col-md-9">
+				<h3><a href="">python爬取酷我音乐(收费也可)</a></h3>
+				<small>第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方第一次创作，请多指教环境:Python3.8，开发工具:Pycharm第三方</small>
+				<div class="pull-right clearfix">
+					<ul class="list-inline liname">
+						<li>昨天<span>&nbsp;22:07</span></li>
+						<li><span class="iconfont">&#xe640;&nbsp;</span><span>874</span></li>
+					</ul>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+
+<div class="final footer">
+	<div class="container text-center context">
+		<ul class="list-inline footul">
+			<li>
+				<span>
+					链接：<a href="">首页</a>|<a href="">排行</a>|<a href="">我的博客</a>|<a href="">我的游戏</a>		
+				</span>
+			</li>
+			<li>
+				<span>版权所有&nbsp;海南椰子蓬勃发展有限公司Copyright Reserved 2015-2017 苏ICP备14085412</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+</body>
+</html>

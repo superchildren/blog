@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>个人设置</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="./icon-font/iconfont.css">
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7/dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		.top{
+			border-bottom: 3px solid blue;
+		}
+		.setting{
+			height: 550px;
+			width: 450px;
+			margin: 40px auto;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		form{
+			margin-top: 30px;
+		}
+		.set{
+			height: 40px;
+			line-height: 40px;
+			margin-top: 15px;
+			font-size: 18px;
+		}
+		.set span{
+			font-size: 18px;
+			height: 40px;
+			letter-spacing: 3px;
+		}
+		.set input[type="text"],.set input[type="number"]{
+			height: 40px;
+		}
+		.set input[type="radio"]{
+			line-height: 40px;
+		}
+		.btn{
+			width: 100%;
+			margin-top: 35px;
+		}
+		.btn1 button{
+			width: 150px;
+			height: 40px;
+		}
+		.container{
+			position: relative;
+		}
+		.back{
+			position: absolute;
+			width: 50px;
+			height: 30px;
+			bottom: 5%;
+			right: 0;
+		}
+		.back a{
+			font-size: 18px;
+			text-decoration: none;
+			line-height: 30px;
+		}
+
+
+		.mytopimg{
+			position: relative;
+			width: 80px;
+			height: 80px;
+			margin: 0 auto;
+		}
+		.mytopimg img{
+			border: 2px solid white;
+		}
+		.topimg{
+			position: absolute;
+			display: block;
+			bottom: 0;
+			right: 0;
+			width: 20px;
+			height: 20px;
+		}
+		#uploadImg{ font-size:12px; overflow:hidden;}
+		#file{  z-index:100;opacity:0;filter:alpha(opacity=0); }
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="top"><h2>个人设置</h2></div>
+	<div class="setting">
+		<form>
+			<div class="mytopimg">
+				<img src="images/header.jpg" class="img-circle" style="width: 80px;height: 80px;">
+				<input type="file" id="file" name="avatar" size="1" class="topimg">
+				<span class="iconfont topimg" id="uploadImg"><a href="#" class="iconfont">&#xe699;</a></span>
+			</div>
+			<div class="set">
+				<span class="iconfont col-md-4">&#xe77e;昵&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;称</span>
+				<input type="text" name="username" class="col-md-8" style="text-indent: 1em;">
+			</div>
+			<div class="set">
+				<span class="iconfont col-md-4">&#xe6ef;性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别</span>
+				<input type="radio" name="sex" value="男生" style="margin-right: 10px;">男
+				<input type="radio" name="sex" value="女生" style="margin-left: 50px;margin-right: 10px;" >女
+			</div>
+			<div class="set">
+				<span class="iconfont col-md-4">&#xe673;年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;龄</span>
+				<input type="number" name="age" class="col-md-8" style="text-indent: 1em;">
+			</div>
+			<div class="set">
+				<span class="iconfont col-md-4">&#xe755;初始密码</span>
+				<input type="text" name="oldpwd" class="col-md-8" style="text-indent: 1em;">
+			</div>
+			<div class="set">
+				<span class="iconfont col-md-4">&#xe755;更改密码</span>
+				<input type="text" name="newpwd" class="col-md-8" style="text-indent: 1em;">
+			</div>
+			<div class="btn1 text-center">
+				<button type="button" class="btn btn-info">保存修改</button>
+			</div>
+			
+		</form>
+		<div class="back">
+			<a href="#">返回</a>
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+</html>

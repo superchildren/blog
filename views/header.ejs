@@ -1,0 +1,92 @@
+<div class="top">
+	<div class="container">
+		<div class="logo pull-left">
+			<span class="iconfont iconsailing">
+			</span>
+			<a href="">超越博客</a>
+		</div>
+		<div class="txt pull-right">
+			<ul class="list-inline">
+
+				<% if(user){ %>
+
+					<li>
+						<img src="/images/<%=user.avatar%>" class="img-circle" style="width: 25px;height: 25px;">
+						<span><a href=""><%=user.username%></a></span>
+					</li>
+					<li>
+						<button type="button" class="iconfont" data-toggle="modal" data-target="#myModal">&#xe771;</button>
+					</li>
+				<%}else{%>
+					<li>
+						<span>
+							<a href="/login">登录</a>|<a href="/register">注册</a>
+						</span>
+					</li>
+				<%}%>
+					<li>
+						<form id="sform" method="get" action="/search">
+							<input type="search" style="float: left;" name="keyword">
+							<a style="float: left;margin-left: -20px;line-height: 26px;text-decoration: none;" class="iconfont" onclick="sub()">&#xe616;</a>
+						</form>
+					</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<% if(user){ %>
+<div class="modal fade" id="myModal">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<form action="/article" method="post">
+				<input type="hidden" name="aid" value="<%=user._id%>">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+					<h3 class="modal-title" id="mytitle">发博文</h3>
+				</div>
+				<div class="modal-body">
+					<b>标题:</b><input type="text" name="title" class="title">
+					<div class="time text-center" id="tim"></div>
+				</div>
+				<div class="modal-footer">
+					<textarea class="art" name="context"></textarea>
+					<div class="text-center btnfoot">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="submit" class="btn btn-primary">发布</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<% } %>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#tab">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="tab">
+	    <ul class="nav navbar-nav">
+			<li class="active"><a href="/">首页</a></li>
+			<li><a href="/articlescore">排行</a></li>
+			<li><a href="">我的博客</a></li>
+			<li><a href="">我的游戏</a></li>
+		</ul>
+    </div>
+  </div>
+</nav>
+
+<script type="text/javascript">
+	
+	function sub(){
+
+		document.getElementById('sform').submit();
+		// console.log('aaa')
+	}
+</script>
